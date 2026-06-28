@@ -25,11 +25,16 @@ src/
 │   │   ├── matches/              # API Route — sirve matches
 │   │   └── bets/                 # API Route — sirve bets
 │   ├── bets/[betId]/             # Detalle de apuesta
+│   │   ├── page.tsx              # Página de detalle
 │   │   └── loading.tsx           # Loading UI del detalle
 │   ├── login/                    # Página de login
 │   ├── profile/                  # Perfil (protegida)
+│   │   ├── page.tsx
+│   │   └── loading.tsx           # Loading UI del perfil
 │   ├── globals.css               # Estilos globales + tokens HeroUI
+│   ├── icon.png                  # Logo de la app
 │   ├── layout.tsx                # Layout raíz
+│   ├── loading.tsx               # Loading UI del home
 │   └── page.tsx                  # Home — timeline
 │
 ├── auth.ts                       # Configuración de NextAuth
@@ -52,16 +57,16 @@ src/
     │
     ├── presentation/
     │   ├── components/           # Componentes React
-    │   │   ├── Bet/              # BetCard, BetDetail, BetList, etc.
+    │   │   ├── Bet/              # BetCard, BetDetail, BetDetailView, BetList, BetListEmpty
     │   │   ├── Login/            # LoginForm
     │   │   ├── Match/            # MatchCard
-    │   │   ├── Navbar/           # Navbar, NavbarClient
+    │   │   ├── Navbar/           # Navbar, NavbarClient, NavbarSkeleton
     │   │   ├── ProfileView/      # ProfileView
-    │   │   ├── Timeline/         # Timeline, Tab, DayPanel, etc.
-    │   │   ├── providers/        # SessionProvider, ThemeProvider
-    │   │   └── ui/               # Componentes atómicos (ThemeSwitcher, BetStatusChip)
+    │   │   ├── Timeline/         # Timeline, TimelineDayPanel, HourSeparator, BetPickButton
+    │   │   ├── providers/        # SessionProvider, ThemeProvider, Providers
+    │   │   └── ui/               # ThemeSwitcher, BetStatusChip, ScrollToTop
     │   ├── hooks/                # Custom hooks (usePlaceBet)
-    │   └── store/                # Zustand store
+    │   └── store/                # Zustand store (bet.store)
     │
     └── helpers/                  # Utilidades puras (dates, consts, delay)
 ```
@@ -124,7 +129,7 @@ Contraseña: 123456
 ## Deploy
 
 La aplicación está desplegada en Vercel:
-[https://betday-lite.vercel.app](https://betday-lite.vercel.app)
+[https://betday-lite-six.vercel.app/](https://betday-lite-six.vercel.app/)
 
 # .env.example
 
