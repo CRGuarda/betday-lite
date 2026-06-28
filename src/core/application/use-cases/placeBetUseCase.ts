@@ -20,6 +20,6 @@ export const placeBetUseCase = ({ match, pick }: PlaceBetParams): BetWithMatch =
   odd: match.market.odds[ODD_KEY[pick]],
   stake: 10,
   status: BetStatus.Pending,
-  return: match.market.odds[ODD_KEY[pick]] * 10,
+  return: null, // null porque todos los bets inician en estado Pending
   match,
 })
